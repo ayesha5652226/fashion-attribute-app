@@ -1,0 +1,141 @@
+/* style.css - card layout similar to your 2nd screenshot */
+:root{
+  --bg: #f2f2f5;
+  --card: #ffffff;
+  --accent: #ff4d8b;
+  --muted: #777;
+  --card-radius: 14px;
+}
+
+html,body{
+  height:100%;
+  margin:0;
+  font-family: "Poppins", "Segoe UI", Arial, sans-serif;
+  background: var(--bg);
+  -webkit-font-smoothing:antialiased;
+}
+
+.page{
+  min-height:100%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:48px 20px;
+}
+
+.card{
+  width:760px;
+  background: var(--card);
+  border-radius: var(--card-radius);
+  padding:34px;
+  box-shadow: 0 10px 30px rgba(16,24,40,0.08);
+}
+
+.title{
+  margin:0;
+  font-size:26px;
+  color:#222;
+  text-align:center;
+  margin-bottom:18px;
+}
+
+.upload-form{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:10px;
+  margin-bottom:14px;
+}
+
+.file-label{
+  color:var(--muted);
+  font-size:14px;
+}
+
+.file-input{
+  border:1px solid #e6e6e9;
+  padding:8px 10px;
+  border-radius:8px;
+  width:60%;
+}
+
+.btn{
+  margin-top:6px;
+  background: var(--accent);
+  color:#fff;
+  border:none;
+  padding:10px 18px;
+  border-radius:10px;
+  cursor:pointer;
+  font-weight:600;
+}
+
+.disclaimer{
+  margin-top:14px;
+  background:#fff5f8;
+  color:#8b1f3a;
+  border-radius:8px;
+  padding:10px 14px;
+  font-size:13px;
+  border:1px solid #ffd6e8;
+  text-align:center;
+}
+
+.disclaimer.small{
+  margin-top:18px;
+  background:transparent;
+  color:#b33a5a;
+  border: none;
+  text-align:left;
+  padding-left:0;
+}
+
+.results-row{
+  display:flex;
+  gap:18px;
+  margin-top:18px;
+  align-items:flex-start;
+}
+
+.image-col{
+  width:260px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.preview{
+  max-width:220px;
+  border-radius:10px;
+  box-shadow:0 6px 18px rgba(16,24,40,0.06);
+}
+
+.table-col{
+  flex:1;
+}
+
+.result-table{
+  width:100%;
+  border-collapse:collapse;
+  margin-top:6px;
+  border-radius:10px;
+  overflow:hidden;
+  font-size:15px;
+}
+
+.result-table thead th{
+  background: var(--accent);
+  color:white;
+  padding:12px;
+  text-align:left;
+}
+
+.result-table tbody td{
+  padding:12px 10px;
+  border-bottom:1px solid #f2f2f5;
+  background: #fff;
+}
+
+.result-table tbody tr:nth-child(even) td{
+  background:#fafafa;
+}
