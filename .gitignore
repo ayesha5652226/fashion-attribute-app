@@ -2,11 +2,9 @@
 *.pyc
 venv/
 env/
-model/*.h5
 model/*.pth
 model/*.pt
 model/*.ckpt
-model/*.pkl
 uploads/
 static/uploads/
 .env
