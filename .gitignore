@@ -2,11 +2,12 @@
 *.pyc
 venv/
 env/
+.env
+.ipynb_checkpoints/
+.DS_Store
+# avoid committing large model binaries unless you want them in repo
 model/*.pth
 model/*.pt
 model/*.ckpt
 uploads/
 static/uploads/
-.env
-.ipynb_checkpoints/
-.DS_Store

@@ -1,33 +1,37 @@
+<!-- templates/index.html -->
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>Fashion Attribute Predictor</title>
+    <link rel="stylesheet" href="/static/style.css">
     <style>
         body { font-family: Arial, sans-serif; margin: 40px; }
-        table { border-collapse: collapse; width: 50%; margin-top: 20px; }
-        th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
-        th { background-color: #f2f2f2; }
-        img { max-width: 300px; margin-top: 20px; }
+        h1 { color: #333; }
+        table { border-collapse: collapse; margin-top: 20px; width: 50%; }
+        th, td { border: 1px solid #aaa; padding: 8px; text-align: left; }
+        th { background-color: #f4f4f4; }
+        input[type=file] { margin-top: 20px; }
+        input[type=submit] { margin-top: 10px; padding: 8px 15px; }
+        .error { color: red; margin-top: 20px; }
     </style>
 </head>
 <body>
     <h1>Fashion Attribute Predictor</h1>
-    <form action="/predict" method="post" enctype="multipart/form-data">
+
+    <form action="/" method="post" enctype="multipart/form-data">
         <input type="file" name="file" required>
-        <button type="submit">Predict</button>
+        <br>
+        <input type="submit" value="Predict">
     </form>
 
-    {% if results %}
+    {% if error %}
+        <div class="error">{{ error }}</div>
+    {% endif %}
+
+    {% if predictions %}
         <h2>Predictions:</h2>
-        {% if image_path %}
-            <img src="/static/uploads/{{ image_path }}" alt="Uploaded Image">
-        {% endif %}
-        <table>
-            <tr><th>Attribute</th><th>Predicted Value</th></tr>
-            {% for k, v in results.items() %}
-                <tr><td>{{ k }}</td><td>{{ v|join(', ') }}</td></tr>
-            {% endfor %}
-        </table>
+        {{ predictions | safe }}
     {% endif %}
 </body>
 </html>
